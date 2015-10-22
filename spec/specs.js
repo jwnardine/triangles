@@ -1,10 +1,14 @@
-describe('isosceles', function() {
-  it("is false if sideA doesnt equal sideB or sideC", function() {
-    expect(isosceles("sideA=7, sideB=1, sideC=4")).to.equal(false);
+describe('test-triangle', function() {
+  it("test if we can detect an equ. triangle", function() {
+    expect(triangle(10,10,10)).to.equal("Equilateral");
   });
 
-  it("is true if sideA equals sideB or sideC", function() {
-    expect(isosceles("sideA=7, sideB=7, sideC=4")).to.equal(true);
+  it("test if we can detect a isosceles triangle", function() {
+    expect(triangle(10,10,20)).to.equal("Isosceles");
+  });
+
+  it("test if we can detect no input", function() {
+    expect(triangle(10,null,20)).to.equal("Unknown");
   });
 
 });
